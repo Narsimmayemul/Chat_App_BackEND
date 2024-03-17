@@ -11,6 +11,12 @@ const messageRoutes = require("./routes/message.routes")
 const userRoutes = require("./routes/user.routes")
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
+const cors = require('cors');
+const corsOptions = {
+    origin: true, // Allow all origins
+    credentials: true // Allow cookies to be sent
+};
+app.use(cors(corsOptions));
 
 app.get("/" ,async (req , res)=>{
     try {
